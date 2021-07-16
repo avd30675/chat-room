@@ -1,0 +1,26 @@
+{% from 'macro.html' import displayField %}
+{% extends "base.html" %}
+
+{% block title %} Regestrtion {% endblock %}
+
+
+{% block content %}
+
+<h1> register </h1>
+<form action="{{ url_for('index') }}" , method="POST">
+    {{ displayField(form.username, 'Username', autocomplete="off", autofocus=true) }}
+    {{ displayField(form.password,'PassWord')}}
+    {{ displayField(form.confirm_pswd,'PassWord')}}
+
+    <div>
+        <input type="submit" value="submit">
+    </div>
+
+    {{ form.csrf_token }}
+</form>
+
+   <p> Already registered?<a href="{{ url_for('index') }}">Login here</a></p>
+
+
+
+{% endblock %}
