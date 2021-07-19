@@ -22,9 +22,6 @@ def index():
         username=reg_form.username.data 
         password=reg_form.password.data 
 
-        user_ob=User.query.filter_by(username=username).first()
-        if user_ob :
-            return "user name already exist " 
 
         user=User(username=username,password=password) 
         db.session.add(user)
