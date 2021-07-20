@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField
 from wtforms.validators import InputRequired,EqualTo,Length,ValidationError
 from modules import *
-
+from passlib.hash import pbkdf2_sha256
 def invalid_credentials(form,field) :
 
     password=field.data
@@ -13,7 +13,7 @@ def invalid_credentials(form,field) :
     if user is None :
         raise ValidationError("Username or Password is incorrect")
 
-    elif password != user.password :
+    elif not pbkdf2_sha256.verify(password,user.password) :
         raise ValidationError("Username or password is incorrect")
 
 class registration(FlaskForm):
