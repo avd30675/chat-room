@@ -1,0 +1,34 @@
+h1 {
+  color: blue;
+}
+
+.mainsection {
+  overflow: hidden;
+  width: 100%;
+}
+
+.righthand-side {
+  font: size 0.8em;
+  color: grey;
+}
+
+.formError {
+  list-style-type: none;
+  padding: 0px;
+  color: red;
+}
+
+.jumbotron {
+  marin-bottom: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.form {
+  text-align: center;
+}
+
+.login {
+  text-align: center;
+  font-size: 0.8em;
+}

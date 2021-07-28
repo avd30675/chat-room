@@ -4,19 +4,22 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
-   <h2>Login<h2>
-   <form action="{{ url_for('login')}}" method='POST'>
+  <div style="text-align: center;">
+   <h1>Login</h1>
+   <form action="{{ url_for('login')}}" method='POST' class="login">
         {{ displayField(form.username,'Username',autocomplete="off",autofocus=true) }}
 
         {{ displayField(form.password,'password') }} 
 
-        <div>
-            <input type="submit" value="login">
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-warning">
         </div>
        
         {{ form.csrf_token }}
    </form>
      
-   <p>Have not registered? <a href="{{ url_for('index')}}" >Register here</a>.</p>
+   <p style="text-align: center;">Have not registered? <a href="{{ url_for('index')}}" >Register here</a>.</p>
+
+</div>
 {% endblock %}
 

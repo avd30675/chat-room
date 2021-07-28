@@ -6,22 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Custom css for prelogin pages -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main_style.css') }}">
+
 </head>
 
 <body>
-    {% block content %}
+  <div class="mainsection">
+  <div class="jumbotron">
+    <h1 class="display-4">DChat_club</h1>
+  </div>
 
-    {% endblock %}
-    <h1 id="time"></h1>
-            <script>
-                setInterval(time, 1000);
-                function time() {
-                    let d = new Date()
-                    h=d.getHours();
-                    h= h>12?h-12:h;
-                    document.getElementById('time').innerHTML = h + ":" + d.getMinutes() + ":" + d.getSeconds();
-                }
-            </script>
+   <div class="righthand-side">
+    <!-- flashed messeges -->
+      {% with messeges=get_flashed_messages(with_categories=true) %}
+
+          {% if messeges %}
+              <div class="alert alert-{{ messeges[0][0] }}" role="alert">
+              {{ messeges[0][1] }}
+              </div>
+          {% endif %}
+
+      {% endwith %}
+
+      {% block content %}
+
+      {% endblock %}
+   </div>
+  </div>
 </body>
 
 </html>

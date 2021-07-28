@@ -5,15 +5,15 @@
 
 
 {% block content %}
-
-<h1> register </h1>
-<form action="{{ url_for('index') }}" , method="POST">
+<div style="text-align: center;">
+<h1 > register </h1>
+<form action="{{ url_for('index') }}" , method="POST" class="form">
     {{ displayField(form.username, 'Username', autocomplete="off", autofocus=true) }}
     {{ displayField(form.password,'PassWord')}}
     {{ displayField(form.confirm_pswd,'PassWord')}}
 
-    <div>
-        <input type="submit" value="submit">
+    <div class="form-group">
+        <input type="submit" value="submit" class="btn btn-warning">
     </div>
 
     {{ form.csrf_token }}
@@ -21,6 +21,6 @@
 
    <p> Already registered?<a href="{{ url_for('login') }}">Login here</a></p>
 
-
+<div>
 
 {% endblock %}
