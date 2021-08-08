@@ -118,10 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
          }
 
          // LOGOUT from chat applicatio 
-         document.querySelector("#logout-btn").onclick= () =>{ leaveRoom(room) } ;
+         document.querySelector("#logout-btn").onclick= () => { leaveRoom(room) } ;
 
          //create new room
-         document.querySelector("#new-rooms").onclick=()=>{
+         document.querySelector("#new-rooms").onclick = () => {
              document.querySelector('#get-rooms').innerHTML="{{ rooms.append('ghxz') }}";
          };
 

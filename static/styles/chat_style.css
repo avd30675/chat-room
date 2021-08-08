@@ -20,7 +20,8 @@ h1 {
   border-right: 0.5px solid #898c91;
 }
 #logout-btn {
-  margin-left: 0.1cm;
+  margin-left: 0;
+  float: right;
 }
 #sidebar p {
   padding-left: 2em;
