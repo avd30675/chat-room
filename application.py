@@ -27,6 +27,7 @@ def load_user(id) :
 #---------------------------------------------------------------------------------
 #rooms-----------
 ROOMS=["c++","python","javascript"]
+
 #intialise 
 socketio = SocketIO(app,manage_session=False)
 

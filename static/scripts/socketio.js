@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
      
         var socket = io(); 
         const username = document.querySelector('#get-username').innerHTML;
-
+        
         let room="c++";
         joinRoom("c++");
         
@@ -119,6 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
          // LOGOUT from chat applicatio 
          document.querySelector("#logout-btn").onclick= () =>{ leaveRoom(room) } ;
+
+         //create new room
+         document.querySelector("#new-rooms").onclick=()=>{
+             document.querySelector('#get-rooms').innerHTML="{{ rooms.append('ghxz') }}";
+         };
 
          //messege printing
          function printSysMsg(msg) {

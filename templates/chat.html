@@ -34,9 +34,12 @@
 
         <nav id="sidebar">
             <h3>Rooms</h3>
+            
              {% for room in rooms :%}
               <p id="{{ room|title }}" class="select-room cursor-pointer">{{ room|title }}</p>
              {% endfor %}
+             <button id="new-rooms">+newroom</button>
+             
         </nav>
         
         <!-- Rightside pannel start -->
@@ -67,6 +70,7 @@
  </div> <!-- wrapper end-->
     
     <!-- Get username -->
+    <span id="get-rooms" style="display: none;"> </span>
     <span id="get-username" style="display: none;">{{ username }}</span>
 
     <!-- Custom SocketIO JS -->
