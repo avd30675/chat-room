@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,redirect,flash
+from flask import Flask,render_template,url_for,redirect,flash,request
 from forms import *
 from modules import *
 from passlib.hash import pbkdf2_sha256
@@ -126,6 +126,15 @@ def chat():
         flash('please login befor chat','danger')
         return redirect(url_for('login'))
     return render_template('chat.html',username=current_user.username,rooms=ROOMS)
+
+@app.route("/new_room",methods=['GET','POST'])
+def new_room():
+    if request.method=='POST' :
+        room=request.form["room"]
+        ROOMS.append(room)
+        return render_template('chat.html',username=current_user.username,rooms=ROOMS)
+    else :
+       return render_template('new_room.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
