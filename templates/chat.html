@@ -54,7 +54,7 @@
              {% for room in rooms :%}
               <p id="{{ room|title }}" class="select-room cursor-pointer">{{ room|title }}</p>
              {% endfor %}
-             <a href="{{  url_for('new_room') }}">+new</a>
+             <a href="{{  url_for('new_room') }}" class="btn btn-warning">+new</a>
 
 
              
